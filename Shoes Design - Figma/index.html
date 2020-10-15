@@ -3,12 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <link rel="stylesheet" href="./style.css">
-    <title>Work task - Soltia</title>
+    <script src="./app.js" defer></script>
+    <title>Shoes Design</title>
 </head>
 <body>
+    <button class="hamburger">
+        <i class="fas fa-bars"></i>
+    </button>
+    <a href="" class="phone">
+        <i class="fas fa-phone"></i>
+    </a>
+    <div class="logo">
+        <i class="fas fa-shoe-prints"></i>
+        <h2>Shoe are Us</h2>
+        <p>Find the right fit for you</p>
+        
+    </div>
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <div class="slide" data-bg="cb021c">
+                <img src="./img/1.jpg" alt="">
+                <h1>Performance</h1>
+                <a href="">Learn More</a>
+            </div>
+            <div class="slide" data-bg="BB0F29">
+                <img src="./img/4.jpg" alt="">
+                <h1>Commodity</h1>
+                <a href="">Learn More</a>
+            </div>
+            <div class="slide" data-bg="008cff">
+                <img src="./img/5.jpg" alt="">
+                <h1>Design</h1>
+                <a href="">Learn More</a>
+            </div>
+            
+            
     
-    <script src="./app.js"></script>
+        </div>
+        <button id="left" class="left-arrow arrow">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="right" class="right-arrow arrow">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="progress"></div>
+    </div>
+
+
+    
 </body>
 </html>
