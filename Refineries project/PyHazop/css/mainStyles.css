@@ -7,7 +7,6 @@
 body {
  font-family: 'Source Sans Pro', sans-serif;
  font-size: 17px;
- color: #926239;
  line-height: 1.6;
 }
 #nav {
@@ -113,23 +112,34 @@ header > h2 {
 }
 .loginPage__nav input {
  width: 250px;
- margin-top: 10px;
  background: transparent;
  outline: none;
  padding: 10px 20px;
- margin: 0 10px;
+ margin: 10px;
  font-size: 15px;
  border: 1px solid #00abc0;
  border-radius: 30px;
  box-shadow: 0 0 10px rgb(255, 255, 255, 1);
- /* box-shadow: 0 0 10px #fff; */
  transition: box-shadow 0.5s ease;
+ color: white;
+}
+/* EI* */
+_:-ms-fullscreen, .loginPage__nav input { 
+ border: 1px solid white;
+ box-shadow: 0 0 10px #fff;
 }
 .loginPage__nav input::placeholder{
  color: white;
 }
+/* EI* */
+_:-ms-fullscreen, .loginPage__nav input::placeholder{
+ color: #fff !important;
+}
 .loginPage__nav input[placeholder]:focus {
- color: white;
+ color: #fff !important;
+}
+_:-ms-fullscreen, .loginPage__nav input[placeholder]:focus {
+ color: #fff !important;
 }
 .loginPage__nav a {
  padding: 5px 20px;
@@ -157,6 +167,7 @@ input:focus, a:hover {
  object-fit: cover;
  opacity: 0.8;
 }
+
 .overlay {
  position: absolute;
  top: 0;
@@ -166,21 +177,36 @@ input:focus, a:hover {
  background: #00abc0;
  mix-blend-mode: overlay;
 }
+/* EI* */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .overlay {
+    background: rgb(0, 174, 255);
+    opacity: 0.4;
+    background: transparentize(darken(blue, 8), .5);
+  }
+  #loginPage {
+    overflow: hidden;
+  }
+  #loginPage video {
+     height: auto;
+  }
+}
 /* Main Section */
 #loginPage .loginPage__main {
- position: relative;
+ /* position: absolute; */
  z-index: 10;
  color: white;
+ padding-top: 250px;
 }
 .loginPage__main h2 {
- font-size: 4em;
+ font-size: 2em;
  font-weight: 800;
  line-height: 1em;
  text-transform: uppercase;
  padding-top: 2rem;
 }
 .loginPage__main > ul {
- font-size: 1.8em;
+ font-size: 1.5em;
  margin: 20px 0;
  font-weight: 400;
  max-width: 700px;
@@ -213,6 +239,16 @@ input:focus, a:hover {
  padding-left: 8%;
  padding-right: 8%;
  padding-top: 50px;
+}
+/* EI* */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .projectPage__main {
+    grid-template-columns: 20% auto;
+  }
+  #loginPage .loginPage__main {
+    position: absolute;
+    padding-top: 150px;
+  }
 }
 .aside {
  padding: 10px;
@@ -339,13 +375,13 @@ input:focus, a:hover {
   width: 100%;
  }
  .loginPage__main h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
  }
  .loginPage__main {
   padding-top: 300px;
  }
  .loginPage__main > ul {
-  font-size: 1rem;
+  font-size: 0.8rem;
  }
  #nav > h2 {
   padding-top: 30px;
@@ -408,10 +444,10 @@ input:focus, a:hover {
   padding: 40px;
  }
  .loginPage__main h2 {
-  font-size: 3em;
+  font-size: 1.2em;
  }
  .loginPage__main > ul {
-  font-size: 1.2em;
+  font-size: 1em;
  }
  #loginPage form {
   display: flex;
@@ -424,6 +460,7 @@ input:focus, a:hover {
  }
  #nav > h2 {
   padding-top: 40px;
+  font-size: 1.8rem;
  }
  .loginPage__nav button {
   margin-top: 5px;
@@ -493,3 +530,11 @@ input:focus, a:hover {
  }
 }
 /* 1201px and more —  Extra large screens, TV */
+@media screen and (min-width: 1260px) and (max-width: 1300px) {
+  .loginPage__main > h2 {
+    font-size: 1.2em;
+  }
+ .loginPage__main > ul {
+    font-size: 1em;
+  }
+}
